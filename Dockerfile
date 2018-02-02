@@ -1,7 +1,6 @@
 # Elixir + Phoenix
 
 FROM elixir:1.6.1
-LABEL maintainer="robb@public.law"
 
 # Install debian packages
 RUN apt-get update
