@@ -1,7 +1,4 @@
 # Elixir + Phoenix
-#
-# Maximize caching by doing as much work as possible before
-# introducing the source code.
 
 FROM elixir:1.6.1
 LABEL maintainer="robb@public.law"
