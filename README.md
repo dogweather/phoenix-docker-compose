@@ -5,7 +5,7 @@ Using Elixir 1.6.1, Phoenix 1.3.0, and latest Postgres. These are the latest ver
 ## Instructions
 
 1. Copy the three config files to an existing Phoenix project which you want to Dockerize.
-2. Edit your development database settings to connect to Postgres at host `db`, username `postgres`, password blank.
+2. Edit your development database settings to connect to Postgres at host `db`, username `postgres`, password empty string.
 3. Spin it up with `docker-compose up`.
 
 Tests can be run in the container like so:
