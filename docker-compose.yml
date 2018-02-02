@@ -1,5 +1,3 @@
-# https://medium.com/@hex337/running-a-phoenix-1-3-project-with-docker-compose-d82ab55e43cf
-
 version: '3.2'
 services:
   db:
