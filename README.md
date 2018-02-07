@@ -2,6 +2,7 @@
 
 ## What you get
 
+* One-line dev environment setup: `docker-compose up`. It sets up the database, Dialyzer (if the project has Dialyxer installed), and everything else.
 * Development-oriented config: Source code is mounted so that changes in the container appear on the host, and vice-versa.
 * Fast re-builds because the `DOCKERFILE` is written to help Docker cache the images.
 * Syncing with Postgres startup delay.
