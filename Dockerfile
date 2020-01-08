@@ -1,6 +1,6 @@
 # Elixir + Phoenix
 
-FROM elixir:1.6.1
+FROM elixir:1.9.4
 
 # Install debian packages
 RUN apt-get update
@@ -14,7 +14,7 @@ RUN mix archive.install --force https://github.com/phoenixframework/archives/raw
 # Install node
 RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
 RUN bash nodesource_setup.sh
-RUN apt-get install nodejs
+RUN apt-get install --yes nodejs npm
 
 WORKDIR /app
 EXPOSE 4000
