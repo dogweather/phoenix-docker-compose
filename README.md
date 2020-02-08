@@ -23,7 +23,7 @@ Tests can be run in the container like so:
 docker-compose run web mix test
 ```
 
-Or, for a slightly faster startup time,
+Or, for a slightly faster startup time:
 
 ```bash
 docker-compose exec web mix test
