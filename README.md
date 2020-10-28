@@ -2,14 +2,14 @@
 
 ## What you get
 
-* One-line dev environment setup: `docker-compose up`. It creates the database, does the Dialyzer pre-work (if the project has [Dialyxer](https://github.com/jeremyjh/dialyxir) installed), and everything else.
-* Development-oriented config: Source code is mounted so that changes in the container appear on the host, and vice-versa.
-* Fast re-builds because the `DOCKERFILE` is written to help Docker cache the images.
-* Syncing with Postgres startup delay.
-* All the crappy little dependencies installed.
-* No weird hacks.
+- One-line dev environment setup: `docker-compose up`. It creates the database, does the Dialyzer pre-work (if the project has [Dialyxer](https://github.com/jeremyjh/dialyxir) installed), and everything else.
+- Development-oriented config: Source code is mounted so that changes in the container appear on the host, and vice-versa.
+- Fast re-builds because the `DOCKERFILE` is written to help Docker cache the images.
+- Syncing with Postgres startup delay.
+- All the crappy little dependencies installed.
+- No weird hacks.
 
-Uses Elixir 1.6.1, Phoenix 1.3.0, and latest Postgres. These are the latest versions as of 2018-02-02. Tested on MacOS and Fedora Linux, because that's what I happen to use. This is my configuration I develop with.
+The Dockerfile and docker-compose file now accept Elixir, Node and Postgres versions thru arguments. check the files for more info.
 
 ## Instructions
 
