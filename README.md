@@ -9,7 +9,7 @@
 - All the crappy little dependencies installed.
 - No weird hacks.
 
-The Dockerfile and docker-compose file now accept Elixir, Node, Postgres and Node versions thru arguments. check the files for more info.
+The Dockerfile and docker-compose file now accept Elixir, Node and Postgres versions thru arguments. check the files for more info.
 
 ## Instructions
 
