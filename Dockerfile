@@ -20,7 +20,4 @@ RUN bash nodesource_setup.sh
 RUN apt-get install nodejs
 
 WORKDIR /app
-
-# Set port as argument
-ARG PORT=4000
-EXPOSE $PORT
+EXPOSE 4000
