@@ -30,6 +30,16 @@ done
 
 echo "\nPostgres is available: continuing with database setup..."
 
+#Analysis style code
+# Prepare Credo if the project has Credo start code analyze
+if mix help credo >/dev/null 2>&1
+then
+  echo "\nFound Credo: analyzing..."
+  mix credo || true
+else
+  echo "\nNo Credo config: Skipping code analyze..."
+fi
+
 # Potentially Set up the database
 mix ecto.create
 mix ecto.migrate
