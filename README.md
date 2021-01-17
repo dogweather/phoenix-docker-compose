@@ -1,21 +1,36 @@
 # Elixir / Phoenix containerized development environment
 
+This repo contains simple boilerplate files that can be added to any [Phoenix](https://www.phoenixframework.org/) application so you may run it and its database inside Docker containers using [Docker Compose](https://docs.docker.com/compose/). 
+
 ## What you get
 
-* One-line dev environment setup: `docker-compose up`. It creates the database, does the Dialyzer pre-work (if the project has [Dialyxer](https://github.com/jeremyjh/dialyxir) installed), and everything else.
-* Development-oriented config: Source code is mounted so that changes in the container appear on the host, and vice-versa.
-* Fast re-builds because the `DOCKERFILE` is written to help Docker cache the images.
+* One-line dev environment setup: `docker-compose up`. This command creates the database, does the Dialyzer pre-work (if the project has [Dialyxer](https://github.com/jeremyjh/dialyxir) installed), and everything else.
+* Developer-friendly setup: Source code is mounted so that changes in the container appear on the host and vice-versa.
+* Fast re-builds because the `Dockerfile` is written to help Docker cache the images.
 * Syncing with Postgres startup delay.
 * All the crappy little dependencies installed.
 * No weird hacks.
 
-Uses Elixir 1.6.1, Phoenix 1.3.0, and latest Postgres. These are the latest versions as of 2018-02-02. Tested on MacOS and Fedora Linux, because that's what I happen to use. This is my configuration I develop with.
+Uses Elixir 1.9.4 (compatible with Phoenix 1.4), and latest Postgres. 
 
 ## Instructions
 
-1. Copy the three config files to an existing Phoenix project which you want to Dockerize. Make `run.sh` executable, e.g. `chmod +x run.sh`.
-2. Edit your development database settings to connect to Postgres at host `db`, username `postgres`, password empty string.
-3. Spin it up with `docker-compose up`.
+1. Copy the three files (`Dockerfile`, `docker-compose.yml`, and `run.sh`) to an existing Phoenix project which you want to Dockerize. 
+2. Make `run.sh` executable, e.g. `chmod +x run.sh`
+3. Edit the database connection settings for the environments which will use this setup (usually `dev.exs` and `test.exs`).
+You can hard-code the credentials for the relevant environment(s) to reference the hostname of `db`, a username of `postgres`, and an empty password, or you can specify environment-variable overrides like the following:
+
+```elixir
+# Inside config/dev.ex and/or config/test.exs
+config :my_app, MyApp.Repo,
+  hostname: System.get_env("DB_HOST", "localhost"),
+  password: System.get_env("DB_PASS", "postgres"),
+  # ... etc...
+```
+
+4. Spin it up with `docker-compose up`.
+
+## Usage
 
 Tests can be run in the container like so:
 
